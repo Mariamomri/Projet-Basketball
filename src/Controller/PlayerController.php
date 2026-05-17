@@ -24,9 +24,13 @@ final class PlayerController extends AbstractController
     public function index(PlayerRepository $repository): Response
     {
         $players = $repository->findAll();
-        dd($players);
+        // dd($players);
 
-        // dump($request);  non mi trova la variabile riquest
+        // dump($request);  non mi trova la variabile request
         // die;
+
+        return $this->render('player/index.html.twig', [
+            'players' => $players,
+        ]);
     }
 }

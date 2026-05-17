@@ -56,5 +56,5 @@ final class PlayerController extends AbstractController
             'id'   => $id,
             'slug' => $slug,
         ]);
-    }
+    } // in url faire http://127.0.0.1:8000/playersjson/lebron-james-1
 }

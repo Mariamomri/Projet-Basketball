@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
+use Symfony\Component\HttpFoundation\JsonResponse; //return json 
+
 // use Symfony\Component\HttpFoundation\Request; l'ho utilizzata per il debug ma non fonziona
 
 final class PlayerController extends AbstractController
@@ -43,6 +45,16 @@ final class PlayerController extends AbstractController
             'slug'   => $slug,
             'id'     => $id,
             'player' => $player,
+        ]);
+    }
+
+    // retourner un json
+    #[Route(path: '/playersjson/{slug}-{id}', name: 'app_player_show_json', requirements: ['id' => '\d+', 'slug' => '[a-z0-9-]+'])]
+    public function showJson(string $slug, int $id): JsonResponse
+    {
+        return $this->json([
+            'id'   => $id,
+            'slug' => $slug,
         ]);
     }
 }

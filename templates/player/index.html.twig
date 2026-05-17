@@ -10,6 +10,9 @@
             <h2>{{ player.name }}</h2>
             <p>Position : {{ player.position }}</p>
             <p>Équipe : {{ player.team }}</p>
+            <a href="{{ path('app_player_show', {id: player.id, slug: player.slug}) }}">
+            Plus info
+            </a>
         </div>
     {% endfor %}
 

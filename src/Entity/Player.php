@@ -7,6 +7,8 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PlayerRepository::class)]
+#[ORM\Table(name: 'players')]
+#[ORM\HasLifecycleCallbacks]
 class Player
 {
     #[ORM\Id]
@@ -31,6 +33,12 @@ class Player
 
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
+
+    #[ORM\Column]
+    private ?\DateTimeImmutable $createdAt = null;
+
+    #[ORM\Column]
+    private ?\DateTimeImmutable $updatedAt = null;
 
     public function getId(): ?int
     {
@@ -107,5 +115,40 @@ class Player
         $this->slug = $slug;
 
         return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $createdAt): static
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    // methode 
+    #[ORM\PrePersist]
+    #[ORM\PreUpdate]
+    public function updateTimestamps(): void
+    {
+        if ($this->createdAt === null) {
+            $this->setCreatedAt(new \DateTimeImmutable());
+        }
+        $this->setUpdatedAt(new \DateTimeImmutable());
     }
 }

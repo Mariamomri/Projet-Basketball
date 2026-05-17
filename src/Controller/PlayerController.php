@@ -33,4 +33,16 @@ final class PlayerController extends AbstractController
             'players' => $players,
         ]);
     }
+
+    #[Route('/players/{slug}-{id}', name: 'app_player_show', requirements: ['id' => '\d+', 'slug' => '[a-z0-9-]+'])]
+    public function show(string $slug, int $id, PlayerRepository $repository): Response
+    {
+        $player = $repository->find($id);
+
+        return $this->render('player/show.html.twig', [
+            'slug'   => $slug,
+            'id'     => $id,
+            'player' => $player,
+        ]);
+    }
 }

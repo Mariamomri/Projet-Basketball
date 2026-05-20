@@ -1,5 +1,4 @@
-
-<header class="fixed top-0 left-0 right-0 z-50 bg-gray-950/90 backdrop-blur-md border-b border-orange-600/20">
+<header class="fixed top-0 left-0 right-0 z-50 bg-black backdrop-blur-md border-b border-orange-600/20">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
         
         <a href="{{ path('app_home') }}" class="flex items-center gap-2 group">
@@ -11,12 +10,20 @@
 
         <ul class="hidden md:flex items-center gap-8">
             <li>
-                <a href="{{ path('app_home') }}" class="nav-link text-gray-300 hover:text-white font-medium transition-colors">
+                <a href="{{ path('app_home') }}" 
+                    class="font-medium transition-colors pb-1
+                    {{ app.current_route == 'app_home' 
+                        ? 'text-orange-400 border-b-2 border-orange-400' 
+                        : 'text-gray-300 hover:text-white' }}">
                     Accueil
                 </a>
             </li>
             <li>
-                <a href="{{ path('app_player') }}" class="nav-link text-gray-300 hover:text-white font-medium transition-colors">
+                <a href="{{ path('app_player') }}" 
+                    class="font-medium transition-colors pb-1
+                    {{ app.current_route starts with 'app_player' 
+                        ? 'text-orange-400 border-b-2 border-orange-400' 
+                        : 'text-gray-300 hover:text-white' }}">
                     Joueurs
                 </a>
             </li>
@@ -32,10 +39,26 @@
 
     <!-- Menu mobile -->
     <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-orange-600/20 px-4 py-4 space-y-3">
-        <a href="{{ path('app_home') }}" class="block text-gray-300 hover:text-orange-400 transition-colors py-2">Accueil</a>
-        <a href="{{ path('app_player') }}" class="block text-gray-300 hover:text-orange-400 transition-colors py-2">Joueurs</a>
+        <a href="{{ path('app_home') }}" 
+            class="block py-2 transition-colors
+            {{ app.current_route == 'app_home' 
+                ? 'text-orange-400' : 'text-gray-300 hover:text-orange-400' }}">
+            Accueil
+        </a>
+        <a href="{{ path('app_player') }}" 
+            class="block py-2 transition-colors
+            {{ app.current_route starts with 'app_player' 
+                ? 'text-orange-400' : 'text-gray-300 hover:text-orange-400' }}">
+            Joueurs
+        </a>
     </div>
 </header>
 
 <!-- header fixe -->
 <div class="h-16"></div>
+
+<script>
+    document.getElementById('menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+</script>

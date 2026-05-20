@@ -1,8 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Basketball Home{% endblock %}
 
 {% block body %}
+
+<section class="relative w-full h-screen overflow-hidden">
+
+    <video 
+        id="hero-video"
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay 
+        muted
+        playsinline>
+        <source src="{{ asset('videos/232453_medium.mp4') }}" type="video/mp4">
+    </video>
 
     <h1> Basketball</h1>
 
@@ -11,6 +22,6 @@
         Le but est de lancer le ballon dans le panier adverse pour marquer des points.
     </p>
 
-    <video src=""></video>
+</section>
 
 {% endblock %}

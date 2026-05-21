@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ player.name }}{% endblock %}
+
+{% block body %}
+
+    <section class="relative py-24 px-4 overflow-hidden min-h-screen">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-orange-950"></div>
+        
+        <div class="absolute top-0 right-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-orange-600/5 rounded-full blur-3xl"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto">
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+
+                <div class="flex flex-col items-center md:items-start">
+
+                        {% if player.image %}
+                        <img src="{{ player.image }}" 
+                            alt="{{ player.name }}"
+                            class="w-55 h-55 rounded-2xl object-cover mb-4 shadow-lg glow">
+                        {% else %}
+                            <div class="w-55 h-55 gradient-orange rounded-2xl flex items-center justify-center mb-4 text-2xl font-bebas text-white shadow-lg glow">
+                                {{ player.name|slice(0,2)|upper }}
+                            </div>
+                        {% endif %}
+    
+                    <span class="bg-orange-500/10 text-orange-400 text-sm px-4 py-2 rounded-full border border-orange-500/20 font-medium">
+                        {{ player.position }}
+                    </span>
+                </div>
+
+                <div class="md:col-span-2">
+                    <p class="text-orange-400 uppercase tracking-widest text-xs font-semibold mb-2">Joueur NBA</p>
+                    <h1 class="font-bebas text-5xl sm:text-7xl text-white leading-none mb-6">
+                        {{ player.name }}
+                    </h1>
+
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4">
+                            <p class="text-gray-500 text-xs uppercase tracking-wider mb-1">Équipe</p>
+                            <p class="text-white font-semibold">{{ player.team }}</p>
+                        </div>
+                        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4">
+                            <p class="text-gray-500 text-xs uppercase tracking-wider mb-1">Position</p>
+                            <p class="text-white font-semibold">{{ player.position }}</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+                        <h2 class="text-orange-400 font-semibold text-sm uppercase tracking-wider mb-3">Description</h2>
+                        <p class="text-gray-300 leading-relaxed text-base">{{ player.description }}</p>
+                    </div>
+
+                    
+                </div><a href="{{ path('app_player') }}" class="gradient-orange text-white px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition-all glow whitespace-nowrap">
+                        Tous les joueurs
+                    </a>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

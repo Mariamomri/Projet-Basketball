@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Basketball Home{% endblock %}
+
+{% block body %}
+
+<section class="relative w-full h-screen overflow-hidden">
+
+    <video 
+        id="hero-video"
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay 
+        muted
+        playsinline>
+        <source src="{{ asset('232453_medium.mp4') }}" type="video/mp4">
+    </video>
+
+    <div class="absolute inset-0 bg-gradient-to-b from-gray-950/60 via-gray-950/40 to-gray-950"></div>
+
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+        
+        <p class="text-orange-400 font-semibold uppercase tracking-[0.3em] text-sm mb-4 animate-pulse">
+            Bienvenue sur
+        </p>
+
+        <h1 class="font-bebas text-7xl sm:text-9xl text-white leading-none mb-6 drop-shadow-2xl">
+            BASKET<span class="text-orange-500">BALL</span>
+        </h1>
+
+        <p class="text-gray-300 text-lg sm:text-xl max-w-2xl mb-10 leading-relaxed">
+            Le basketball oppose deux équipes de cinq joueurs. 
+            Le but : lancer le ballon dans le panier adverse pour marquer des points.
+        </p>
+
+        <a href="{{ path('app_player') }}" 
+            class="border border-orange-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition-all glow hover:scale-105">
+            Découvrir les joueurs 
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

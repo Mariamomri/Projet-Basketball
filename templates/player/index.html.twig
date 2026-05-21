@@ -29,15 +29,45 @@
 
 
 
-    {% for player in players %}
-        <div>
-            <h2>{{ player.name }}</h2>
-            <p>Position : {{ player.position }}</p>
-            <p>Équipe : {{ player.team }}</p>
-            <a href="{{ path('app_player_show', {id: player.id, slug: player.slug}) }}">
-            Plus info
-            </a>
+    <section class="max-w-7xl mx-auto px-4 pb-20 mt-20 ">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
+            {% for player in players %}
+            <div class="card-hover bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden group">
+                
+                <div class="gradient-orange h-2"></div>
+
+                <div class="p-6">
+                    {% if player.image %}
+                    <img src="{{ player.image }}" 
+                        alt="{{ player.name }}"
+                        class="w-16 h-16 rounded-2xl object-cover mb-4 shadow-lg glow">
+                    {% else %}
+                        <div class="w-16 h-16 gradient-orange rounded-2xl flex items-center justify-center mb-4 text-2xl font-bebas text-white shadow-lg glow">
+                            {{ player.name|slice(0,2)|upper }}
+                        </div>
+                    {% endif %}
+
+                    <h2 class="font-bebas text-2xl text-white mb-1 group-hover:text-orange-400 transition-colors">
+                        {{ player.name }}
+                    </h2>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-orange-500/10 text-orange-400 text-xs px-3 py-1 rounded-full border border-orange-500/20 font-medium">
+                            {{ player.position }}
+                        </span>
+                        <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full font-medium">
+                            {{ player.team }}
+                        </span>
+                    </div>
+
+                    <a href="{{ path('app_player_show', {id: player.id, slug: player.slug}) }}"
+                    class="w-full inline-flex items-center justify-center gap-2 gradient-orange text-white py-3 px-4 rounded-xl font-semibold text-sm hover:opacity-90 transition-all hover:scale-105">
+                        Voir le profil <span></span>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-    {% endfor %}
+    </section>
 
 {% endblock %}

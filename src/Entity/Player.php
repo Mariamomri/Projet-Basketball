@@ -40,6 +40,10 @@ class Player
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    #[ORM\ManyToOne(inversedBy: 'players')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Coach $coach = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -150,5 +154,17 @@ class Player
             $this->setCreatedAt(new \DateTimeImmutable());
         }
         $this->setUpdatedAt(new \DateTimeImmutable());
+    }
+
+    public function getCoach(): ?Coach
+    {
+        return $this->coach;
+    }
+
+    public function setCoach(?Coach $coach): static
+    {
+        $this->coach = $coach;
+
+        return $this;
     }
 }

@@ -11,6 +11,7 @@ use App\Entity\Traits\Timestampable;
 #[ORM\Entity(repositoryClass: CoachRepository::class)]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
 #[ORM\HasLifecycleCallbacks]
+#[ORM\Table(name: 'coaches')]
 class Coach implements UserInterface, PasswordAuthenticatedUserInterface
 {
     use Timestampable;

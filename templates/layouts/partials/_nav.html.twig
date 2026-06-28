@@ -29,6 +29,15 @@
             </li>
             {% if app.user %}
                 <li>
+                    <a href="{{ path('app_player_create') }}" 
+                        class="font-medium transition-colors pb-1
+                        {{ app.current_route == 'app_player_create' 
+                            ? 'text-orange-400 border-b-2 border-orange-400' 
+                            : 'text-gray-300 hover:text-white' }}">
+                        Ajouter un joueur
+                    </a>
+                </li>
+                <li>
                     <a href="{{ path('app_account') }}" 
                         class="font-medium transition-colors pb-1
                         {{ app.current_route == 'app_account' 
@@ -88,6 +97,12 @@
             Joueurs
         </a>
         {% if app.user %}
+            <a href="{{ path('app_player_create') }}" 
+                class="block py-2 transition-colors
+                {{ app.current_route == 'app_player_create' 
+                    ? 'text-orange-400' : 'text-gray-300 hover:text-orange-400' }}">
+                Ajouter un joueur
+            </a>
             <a href="{{ path('app_account') }}" 
                 class="block py-2 transition-colors
                 {{ app.current_route == 'app_account' 

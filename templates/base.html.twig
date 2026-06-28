@@ -23,6 +23,18 @@
 
         {{ include('/layouts/partials/_nav.html.twig') }}
 
+        <div class="max-w-7xl mx-auto px-4 pt-4">
+            {% for flash_success in app.flashes('success') %}
+                <div class="bg-green-600 text-white px-4 py-3 rounded mb-3">{{ flash_success }}</div>
+            {% endfor %}
+            {% for flash_error in app.flashes('error') %}
+                <div class="bg-red-600 text-white px-4 py-3 rounded mb-3">{{ flash_error }}</div>
+            {% endfor %}
+            {% for flash_info in app.flashes('info') %}
+                <div class="bg-blue-600 text-white px-4 py-3 rounded mb-3">{{ flash_info }}</div>
+            {% endfor %}
+        </div>
+
         <main class="flex-grow">
             {% block body %}{% endblock %}
         </main>

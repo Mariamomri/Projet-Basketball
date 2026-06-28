@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier {{ player.name }}{% endblock %}
+
+{% block body %}
+
+<section class="relative py-16 px-4 text-center overflow-hidden">
+    <div class="absolute inset-0 bg-gray-950"></div>
+    <div class="relative z-10">
+        <p class="text-orange-400 uppercase tracking-[0.3em] text-sm font-semibold mb-3">Gestion</p>
+        <h1 class="font-bebas text-5xl sm:text-7xl text-white mb-4">
+            MODIFIER <span class="text-orange-500">{{ player.name|upper }}</span>
+        </h1>
+    </div>
+</section>
+
+<section class="max-w-2xl mx-auto px-4 pb-20">
+    {% for flash_success in app.flashes('success') %}
+        <div class="bg-green-600 text-white px-4 py-3 rounded mb-4">{{ flash_success }}</div>
+    {% endfor %}
+
+    <div class="card-hover bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden">
+        <div class="gradient-orange h-2"></div>
+        <div class="p-6">
+            {{ form_errors(monForm) }}
+
+            {{ form_start(monForm, { attr: { class: 'space-y-4' } }) }}
+                {{ form_row(monForm.name, {
+                    label: 'Nom du joueur',
+                    attr: { class: 'w-full bg-gray-800 text-white border border-gray-700 rounded px-3 py-2' },
+                    label_attr: { class: 'text-gray-300 text-sm block mb-1' }
+                }) }}
+                {{ form_row(monForm.position, {
+                    label: 'Poste',
+                    attr: { class: 'w-full bg-gray-800 text-white border border-gray-700 rounded px-3 py-2' },
+                    label_attr: { class: 'text-gray-300 text-sm block mb-1' }
+                }) }}
+                {{ form_row(monForm.team, {
+                    label: 'Équipe',
+                    attr: { class: 'w-full bg-gray-800 text-white border border-gray-700 rounded px-3 py-2' },
+                    label_attr: { class: 'text-gray-300 text-sm block mb-1' }
+                }) }}
+                {{ form_row(monForm.description, {
+                    label: 'Description',
+                    attr: { class: 'w-full bg-gray-800 text-white border border-gray-700 rounded px-3 py-2', rows: 4 },
+                    label_attr: { class: 'text-gray-300 text-sm block mb-1' }
+                }) }}
+                {{ form_row(monForm.image, {
+                    label: 'URL de l\'image (optionnel)',
+                    attr: { class: 'w-full bg-gray-800 text-white border border-gray-700 rounded px-3 py-2' },
+                    label_attr: { class: 'text-gray-300 text-sm block mb-1' }
+                }) }}
+                {{ form_widget(monForm.slug) }}
+
+                <button type="submit" class="w-full inline-flex items-center justify-center gap-2 gradient-orange text-white py-3 px-4 rounded-xl font-semibold text-sm hover:opacity-90 transition-all">
+                    Enregistrer les modifications
+                </button>
+            {{ form_end(monForm) }}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

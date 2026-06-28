@@ -66,6 +66,20 @@ final class PlayerController extends AbstractController
     #[Route('/players/create', name: 'app_player_create')]
     public function create(Request $request, EntityManagerInterface $em): Response
     {
+        if ($this->getUser()) {
+            /**
+             * @var User 
+             */
+            $user = $this->getUser();
+            if (!$user->isVerified()) {
+                $this->addFlash('error', 'You must confirm your email to create a Player !');
+                return $this->redirectToRoute('app_player');
+            }
+        } else {
+            $this->addFlash('error', 'You must login to create a Player !');
+            return $this->redirectToRoute('app_login');
+        }
+
         $player = new Player();
         $form = $this->createForm(PlayerType::class, $player);
         $form->handleRequest($request);
@@ -88,6 +102,23 @@ final class PlayerController extends AbstractController
     #[Route('/players/{id}/edit', name: 'app_player_edit', requirements: ['id' => '\d+'])]
     public function edit(Player $player, Request $request, EntityManagerInterface $em): Response
     {
+        if ($this->getUser()) {
+            /**
+             * @var User 
+             */
+            $user = $this->getUser();
+            if (!$user->isVerified()) {
+                $this->addFlash('error', 'You must confirm your email to edit a Player !');
+                return $this->redirectToRoute('app_player');
+            } elseif ($player->getCoach()->getEmail() !== $this->getUser()->getEmail()) {
+                $this->addFlash('error', 'You must be the coach ' . $player->getCoach()->getEmail() . ' to edit this Player !');
+                return $this->redirectToRoute('app_player');
+            }
+        } else {
+            $this->addFlash('error', 'You must login to edit a Player !');
+            return $this->redirectToRoute('app_login');
+        }
+
         $form = $this->createForm(PlayerType::class, $player);
         $form->handleRequest($request);
 
@@ -108,6 +139,23 @@ final class PlayerController extends AbstractController
     #[Route('/players/{id}/delete', name: 'app_player_delete', requirements: ['id' => '\d+'])]
     public function delete(Player $player, EntityManagerInterface $em): Response
     {
+        if ($this->getUser()) {
+            /**
+             * @var User 
+             */
+            $user = $this->getUser();
+            if (!$user->isVerified()) {
+                $this->addFlash('error', 'You must confirm your email to delete a Player !');
+                return $this->redirectToRoute('app_player');
+            } elseif ($player->getCoach()->getEmail() !== $this->getUser()->getEmail()) {
+                $this->addFlash('error', 'You must be the coach ' . $player->getCoach()->getEmail() . ' to delete this Player !');
+                return $this->redirectToRoute('app_player');
+            }
+        } else {
+            $this->addFlash('error', 'You must login to delete a Player !');
+            return $this->redirectToRoute('app_login');
+        }
+
         $em->remove($player);
         $em->flush();
 

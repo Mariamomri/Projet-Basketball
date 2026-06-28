@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Compte{% endblock %}
+
+{% block body %}
+<div class="max-w-2xl mx-auto px-4 py-12">
+    <h1 class="font-bebas text-4xl tracking-widest text-orange-500 mb-8">MON COMPTE</h1>
+
+    <div class="bg-gray-900 border border-orange-600/20 rounded-lg p-6 space-y-4">
+        <div>
+            <span class="text-gray-400 text-sm">Prénom</span>
+            <p class="text-white text-lg">{{ app.user.firstname }}</p>
+        </div>
+        <div>
+            <span class="text-gray-400 text-sm">Nom</span>
+            <p class="text-white text-lg">{{ app.user.lastname }}</p>
+        </div>
+        <div>
+            <span class="text-gray-400 text-sm">Email</span>
+            <p class="text-white text-lg">{{ app.user.email }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

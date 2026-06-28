@@ -27,6 +27,42 @@
                     Joueurs
                 </a>
             </li>
+            {% if app.user %}
+                <li>
+                    <a href="{{ path('app_account') }}" 
+                        class="font-medium transition-colors pb-1
+                        {{ app.current_route == 'app_account' 
+                            ? 'text-orange-400 border-b-2 border-orange-400' 
+                            : 'text-gray-300 hover:text-white' }}">
+                        Mon Compte
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('app_logout') }}" 
+                        class="font-medium text-gray-300 hover:text-white transition-colors pb-1">
+                        Se Déconnecter
+                    </a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{{ path('app_register') }}" 
+                        class="font-medium transition-colors pb-1
+                        {{ app.current_route == 'app_register' 
+                            ? 'text-orange-400 border-b-2 border-orange-400' 
+                            : 'text-gray-300 hover:text-white' }}">
+                        S'enregistrer
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('app_login') }}" 
+                        class="font-medium transition-colors pb-1
+                        {{ app.current_route == 'app_login' 
+                            ? 'text-orange-400 border-b-2 border-orange-400' 
+                            : 'text-gray-300 hover:text-white' }}">
+                        Se Connecter
+                    </a>
+                </li>
+            {% endif %}
         </ul>
 
         <!-- Menu hamburger mobile -->
@@ -51,6 +87,31 @@
                 ? 'text-orange-400' : 'text-gray-300 hover:text-orange-400' }}">
             Joueurs
         </a>
+        {% if app.user %}
+            <a href="{{ path('app_account') }}" 
+                class="block py-2 transition-colors
+                {{ app.current_route == 'app_account' 
+                    ? 'text-orange-400' : 'text-gray-300 hover:text-orange-400' }}">
+                Mon Compte
+            </a>
+            <a href="{{ path('app_logout') }}" 
+                class="block py-2 text-gray-300 hover:text-orange-400 transition-colors">
+                Se Déconnecter
+            </a>
+        {% else %}
+            <a href="{{ path('app_register') }}" 
+                class="block py-2 transition-colors
+                {{ app.current_route == 'app_register' 
+                    ? 'text-orange-400' : 'text-gray-300 hover:text-orange-400' }}">
+                S'enregistrer
+            </a>
+            <a href="{{ path('app_login') }}" 
+                class="block py-2 transition-colors
+                {{ app.current_route == 'app_login' 
+                    ? 'text-orange-400' : 'text-gray-300 hover:text-orange-400' }}">
+                Se Connecter
+            </a>
+        {% endif %}
     </div>
 </header>
 

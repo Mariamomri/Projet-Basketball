@@ -3,20 +3,28 @@
 {% block title %}Reset your password{% endblock %}
 
 {% block body %}
+<div class="max-w-md mx-auto px-4 py-12">
+    <h1 class="font-bebas text-4xl tracking-widest text-orange-500 mb-8">{{ 'resetPassword.requestTitle'|trans|upper }}</h1>
+
     {% for flash_error in app.flashes('reset_password_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+        <div class="bg-red-600 text-white px-4 py-3 rounded mb-4">{{ flash_error }}</div>
     {% endfor %}
-    <h1>Reset your password</h1>
 
-    {{ form_start(requestForm) }}
-        {{ form_row(requestForm.email) }}
-        <div>
-            <small>
-                Enter your email address, and we will send you a
-                link to reset your password.
-            </small>
-        </div>
+    <div class="bg-gray-900 border border-orange-600/20 rounded-lg p-6">
+        <p class="text-gray-400 text-sm mb-4">
+            {{ 'resetPassword.requestInfo'|trans }}
+        </p>
 
-        <button class="btn btn-primary">Send password reset email</button>
-    {{ form_end(requestForm) }}
+        {{ form_start(requestForm, { attr: { class: 'space-y-4' } }) }}
+            {{ form_row(requestForm.email, {
+                attr: { class: 'w-full bg-gray-800 text-white border border-gray-700 rounded px-3 py-2' },
+                label_attr: { class: 'text-gray-300 text-sm block mb-1' }
+            }) }}
+
+            <button type="submit" class="w-full bg-orange-600 hover:bg-orange-500 text-white font-medium py-2 rounded transition-colors">
+                {{ 'resetPassword.requestSubmit'|trans }}
+            </button>
+        {{ form_end(requestForm) }}
+    </div>
+</div>
 {% endblock %}

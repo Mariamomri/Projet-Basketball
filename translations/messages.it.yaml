@@ -80,3 +80,5 @@ resetPassword.emailHi: "Ciao!"
 resetPassword.emailIntro: "Per reimpostare la tua password, visita il seguente link"
 resetPassword.emailExpiry: "Questo link scadrà in"
 resetPassword.emailCheers: "Saluti!"
+
+registration.emailVerified: "Il tuo indirizzo email è stato verificato."

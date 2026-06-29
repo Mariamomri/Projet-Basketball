@@ -75,3 +75,8 @@ resetPassword.resetSubmit: "Réinitialiser le mot de passe"
 
 resetPassword.newPassword: "Nouveau mot de passe"
 resetPassword.repeatPassword: "Répéter le mot de passe"
+
+resetPassword.emailHi: "Bonjour !"
+resetPassword.emailIntro: "Pour réinitialiser votre mot de passe, veuillez visiter le lien suivant"
+resetPassword.emailExpiry: "Ce lien expirera dans"
+resetPassword.emailCheers: "Cordialement !"

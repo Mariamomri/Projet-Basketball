@@ -6,6 +6,10 @@ navBar.logout: "Se Déconnecter"
 navBar.register: "S'enregistrer"
 navBar.login: "Se Connecter"
 
+home.welcome: "Bienvenue sur"
+home.description: "Le basketball oppose deux équipes de cinq joueurs. Le but : lancer le ballon dans le panier adverse pour marquer des points."
+home.discoverPlayers: "Découvrir les joueurs"
+
 registerForm.firstname: Prénom
 registerForm.lastname: Nom
 registerForm.email: "Adresse e-mail"

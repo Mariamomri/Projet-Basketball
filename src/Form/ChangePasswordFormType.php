@@ -31,7 +31,6 @@ class ChangePasswordFormType extends AbstractType
                         ),
                         new Length(
                             min: 12,
-                            minMessage: 'Your password should be at least {{ limit }} characters',
                             // max length allowed by Symfony for security reasons
                             max: 4096,
                         ),
@@ -39,9 +38,13 @@ class ChangePasswordFormType extends AbstractType
                         new NotCompromisedPassword(),
                     ],
                     'label' => 'resetPassword.newPassword',
+                    'label_attr' => ['class' => 'text-gray-300 text-sm block mb-1'],
+                    'attr' => ['class' => 'w-full bg-gray-800 text-white border border-gray-700 rounded px-3 py-2 mb-4'],
                 ],
                 'second_options' => [
                     'label' => 'resetPassword.repeatPassword',
+                    'label_attr' => ['class' => 'text-gray-300 text-sm block mb-1'],
+                    'attr' => ['class' => 'w-full bg-gray-800 text-white border border-gray-700 rounded px-3 py-2'],
                 ],
                 'invalid_message' => 'The password fields must match.',
                 // Instead of being set onto the object directly,

@@ -59,3 +59,5 @@ account.title: "Il mio account"
 account.firstname: "Nome"
 account.lastname: "Cognome"
 account.email: "Email"
+
+loginForm.forgotPassword: "Password dimenticata?"

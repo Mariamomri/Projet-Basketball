@@ -17,12 +17,10 @@
             attr: { class: 'space-y-4' }
         }) }}
             {{ form_row(registrationForm.firstname, {
-                label: 'Prénom',
                 attr: { class: 'w-full bg-gray-800 text-white border border-gray-700 rounded px-3 py-2' },
                 label_attr: { class: 'text-gray-300 text-sm block mb-1' }
             }) }}
             {{ form_row(registrationForm.lastname, {
-                label: 'Nom',
                 attr: { class: 'w-full bg-gray-800 text-white border border-gray-700 rounded px-3 py-2' },
                 label_attr: { class: 'text-gray-300 text-sm block mb-1' }
             }) }}
@@ -31,7 +29,6 @@
                 label_attr: { class: 'text-gray-300 text-sm block mb-1' }
             }) }}
             {{ form_row(registrationForm.plainPassword, {
-                label: 'Password',
                 attr: { class: 'w-full bg-gray-800 text-white border border-gray-700 rounded px-3 py-2' },
                 label_attr: { class: 'text-gray-300 text-sm block mb-1' }
             }) }}
@@ -40,7 +37,7 @@
             }) }}
 
             <button type="submit" class="w-full bg-orange-600 hover:bg-orange-500 text-white font-medium py-2 rounded transition-colors">
-                Register
+                {{ 'registerForm.submit'|trans }}
             </button>
         {{ form_end(registrationForm) }}
     </div>

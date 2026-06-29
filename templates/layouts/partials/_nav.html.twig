@@ -1,14 +1,14 @@
 <header class="fixed top-0 left-0 right-0 z-50 bg-black backdrop-blur-md border-b border-orange-600/20">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-        
-        <a href="{{ path('app_home') }}" class="flex items-center gap-2 group">
+    <nav class="max-w-7xl mx-auto px-6 sm:px-6 py-6 grid grid-cols-3 items-center">
+
+        <a href="{{ path('app_home') }}" class="flex items-center gap-2 group justify-self-start">
             <span class="text-3xl">🏀</span>
             <span class="font-bebas text-2xl tracking-widest text-orange-500 group-hover:text-orange-400 transition-colors">
                 BASKETBALL
             </span>
         </a>
 
-        <ul class="hidden md:flex items-center gap-8">
+        <ul class="hidden md:flex items-center gap-8 justify-self-center">
             <li>
                 <a href="{{ path('app_home') }}" 
                     class="font-medium transition-colors pb-1
@@ -37,45 +37,42 @@
                         Ajouter un joueur
                     </a>
                 </li>
-                <li>
-                    <a href="{{ path('app_account') }}" 
-                        class="font-medium transition-colors pb-1
-                        {{ app.current_route == 'app_account' 
-                            ? 'text-orange-400 border-b-2 border-orange-400' 
-                            : 'text-gray-300 hover:text-white' }}">
-                        Mon Compte
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ path('app_logout') }}" 
-                        class="font-medium text-gray-300 hover:text-white transition-colors pb-1">
-                        Se Déconnecter
-                    </a>
-                </li>
-            {% else %}
-                <li>
-                    <a href="{{ path('app_register') }}" 
-                        class="font-medium transition-colors pb-1
-                        {{ app.current_route == 'app_register' 
-                            ? 'text-orange-400 border-b-2 border-orange-400' 
-                            : 'text-gray-300 hover:text-white' }}">
-                        S'enregistrer
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ path('app_login') }}" 
-                        class="font-medium transition-colors pb-1
-                        {{ app.current_route == 'app_login' 
-                            ? 'text-orange-400 border-b-2 border-orange-400' 
-                            : 'text-gray-300 hover:text-white' }}">
-                        Se Connecter
-                    </a>
-                </li>
             {% endif %}
         </ul>
 
+        <div class="hidden md:flex items-center gap-6 justify-self-end">
+            {% if app.user %}
+                <a href="{{ path('app_account') }}" 
+                    class="font-medium transition-colors pb-1
+                    {{ app.current_route == 'app_account' 
+                        ? 'text-orange-400 border-b-2 border-orange-400' 
+                        : 'text-gray-300 hover:text-white' }}">
+                    Mon Compte
+                </a>
+                <a href="{{ path('app_logout') }}" 
+                    class="font-medium text-gray-300 hover:text-white transition-colors pb-1">
+                    Se Déconnecter
+                </a>
+            {% else %}
+                <a href="{{ path('app_register') }}" 
+                    class="font-medium transition-colors pb-1
+                    {{ app.current_route == 'app_register' 
+                        ? 'text-orange-400 border-b-2 border-orange-400' 
+                        : 'text-gray-300 hover:text-white' }}">
+                    S'enregistrer
+                </a>
+                <a href="{{ path('app_login') }}" 
+                    class="font-medium transition-colors pb-1
+                    {{ app.current_route == 'app_login' 
+                        ? 'text-orange-400 border-b-2 border-orange-400' 
+                        : 'text-gray-300 hover:text-white' }}">
+                    Se Connecter
+                </a>
+            {% endif %}
+        </div>
+
         <!-- Menu hamburger mobile -->
-        <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+        <button id="menu-btn" class="md:hidden text-white focus:outline-none justify-self-end">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>

@@ -72,3 +72,6 @@ resetPassword.checkEmailRetry: "réessayez"
 
 resetPassword.resetTitle: "Réinitialiser votre mot de passe"
 resetPassword.resetSubmit: "Réinitialiser le mot de passe"
+
+resetPassword.newPassword: "Nouveau mot de passe"
+resetPassword.repeatPassword: "Répéter le mot de passe"

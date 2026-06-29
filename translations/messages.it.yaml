@@ -72,3 +72,6 @@ resetPassword.checkEmailRetry: "riprova"
 
 resetPassword.resetTitle: "Reimposta la tua password"
 resetPassword.resetSubmit: "Reimposta la password"
+
+resetPassword.newPassword: "Nuova password"
+resetPassword.repeatPassword: "Ripeti la password"

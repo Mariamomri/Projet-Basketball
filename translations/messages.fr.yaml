@@ -22,6 +22,12 @@ loginForm.createAccount: "Créer un compte"
 loginForm.alreadyConnected: "Vous êtes connecté en tant que"
 loginForm.logout: "Déconnexion"
 
+playerIndex.subtitle: "Nos stars"
+playerIndex.title1: "Les"
+playerIndex.title2: "Joueurs"
+playerIndex.description: "Découvrez les meilleurs joueurs de basketball de notre sélection"
+playerIndex.viewProfile: "Voir le profil"
+
 playerShow.nbaPlayer: "Joueur NBA"
 playerShow.team: "Équipe"
 playerShow.position: "Position"

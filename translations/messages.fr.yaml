@@ -61,3 +61,7 @@ account.lastname: "Nom"
 account.email: "Email"
 
 loginForm.forgotPassword: "Mot de passe oublié ?"
+
+resetPassword.requestTitle: "Réinitialiser votre mot de passe"
+resetPassword.requestInfo: "Entrez votre adresse e-mail, nous vous enverrons un lien pour réinitialiser votre mot de passe."
+resetPassword.requestSubmit: "Envoyer le lien de réinitialisation"

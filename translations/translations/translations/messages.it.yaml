@@ -1,0 +1,16 @@
+navBar:
+    home: "Home"
+    players: "Giocatori"
+    addPlayer: "Aggiungi un giocatore"
+    account: "Il mio account"
+    logout: "Disconnetti"
+    register: "Registrati"
+    login: "Accedi"
+
+registerForm:
+    firstname: "Nome"
+    lastname: "Cognome"
+    email: "Indirizzo email"
+    plainPassword: "Password"
+    agreeTerms: "Accetto i termini"
+    submit: "Registrati"

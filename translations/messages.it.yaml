@@ -47,3 +47,6 @@ playerForm.team: "Squadra"
 playerForm.description: "Descrizione"
 playerForm.image: "URL dell'immagine (opzionale)"
 playerForm.create: "Crea il giocatore"
+
+playerForm.editTitle: "Modifica"
+playerForm.save: "Salva le modifiche"

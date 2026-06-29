@@ -82,3 +82,5 @@ resetPassword.emailExpiry: "Questo link scadrà in"
 resetPassword.emailCheers: "Saluti!"
 
 registration.emailVerified: "Il tuo indirizzo email è stato verificato."
+
+registerForm.title: "Registrazione"

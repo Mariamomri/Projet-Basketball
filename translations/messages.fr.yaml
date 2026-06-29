@@ -21,3 +21,13 @@ loginForm.createAccount: "Créer un compte"
 
 loginForm.alreadyConnected: "Vous êtes connecté en tant que"
 loginForm.logout: "Déconnexion"
+
+playerShow.nbaPlayer: "Joueur NBA"
+playerShow.team: "Équipe"
+playerShow.position: "Position"
+playerShow.description: "Description"
+playerShow.coach: "Coach"
+playerShow.allPlayers: "Tous les joueurs"
+playerShow.edit: "Modifier"
+playerShow.delete: "Supprimer"
+playerShow.confirmDelete: "Êtes-vous sûr de vouloir supprimer ce joueur ?"

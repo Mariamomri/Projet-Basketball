@@ -50,3 +50,8 @@ playerForm.create: "Créer le joueur"
 
 playerForm.editTitle: "Modifier"
 playerForm.save: "Enregistrer les modifications"
+
+account.title: "Mon Compte"
+account.firstname: "Prénom"
+account.lastname: "Nom"
+account.email: "Email"

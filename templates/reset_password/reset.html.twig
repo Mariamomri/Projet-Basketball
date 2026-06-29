@@ -3,10 +3,20 @@
 {% block title %}Reset your password{% endblock %}
 
 {% block body %}
-    <h1>Reset your password</h1>
+    <div class="max-w-md mx-auto px-4 py-12">
+        <h1 class="font-bebas text-4xl tracking-widest text-orange-500 mb-8">{{ 'resetPassword.resetTitle'|trans|upper }}</h1>
 
-    {{ form_start(resetForm) }}
-        {{ form_row(resetForm.plainPassword) }}
-        <button class="btn btn-primary">Reset password</button>
-    {{ form_end(resetForm) }}
+        <div class="bg-gray-900 border border-orange-600/20 rounded-lg p-6">
+            {{ form_start(resetForm, { attr: { class: 'space-y-4' } }) }}
+                {{ form_row(resetForm.plainPassword, {
+                    attr: { class: 'w-full bg-gray-800 text-white border border-gray-700 rounded px-3 py-2' },
+                    label_attr: { class: 'text-gray-300 text-sm block mb-1' }
+                }) }}
+
+                <button type="submit" class="w-full bg-orange-600 hover:bg-orange-500 text-white font-medium py-2 rounded transition-colors">
+                    {{ 'resetPassword.resetSubmit'|trans }}
+                </button>
+            {{ form_end(resetForm) }}
+        </div>
+    </div>
 {% endblock %}

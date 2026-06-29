@@ -65,3 +65,7 @@ loginForm.forgotPassword: "Password dimenticata?"
 resetPassword.requestTitle: "Reimposta la tua password"
 resetPassword.requestInfo: "Inserisci il tuo indirizzo email, ti invieremo un link per reimpostare la password."
 resetPassword.requestSubmit: "Invia il link di reset"
+
+resetPassword.checkEmailText: "Se esiste un account associato alla tua email, ti è appena stato inviato un messaggio con un link per reimpostare la password. Questo link scadrà in"
+resetPassword.checkEmailSpam: "Se non ricevi un'email, controlla la cartella spam oppure"
+resetPassword.checkEmailRetry: "riprova"

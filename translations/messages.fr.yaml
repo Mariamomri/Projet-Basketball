@@ -65,3 +65,7 @@ loginForm.forgotPassword: "Mot de passe oublié ?"
 resetPassword.requestTitle: "Réinitialiser votre mot de passe"
 resetPassword.requestInfo: "Entrez votre adresse e-mail, nous vous enverrons un lien pour réinitialiser votre mot de passe."
 resetPassword.requestSubmit: "Envoyer le lien de réinitialisation"
+
+resetPassword.checkEmailText: "Si un compte correspondant à votre email existe, un message contenant un lien pour réinitialiser votre mot de passe vient de vous être envoyé. Ce lien expirera dans"
+resetPassword.checkEmailSpam: "Si vous ne recevez pas d'email, vérifiez votre dossier spam ou"
+resetPassword.checkEmailRetry: "réessayez"

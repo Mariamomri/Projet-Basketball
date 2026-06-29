@@ -6,6 +6,10 @@ navBar.logout: Disconnetti
 navBar.register: Registrati
 navBar.login: Accedi
 
+home.welcome: "Benvenuti su"
+home.description: "Il basket vede due squadre di cinque giocatori. L'obiettivo: lanciare la palla nel canestro avversario per segnare punti."
+home.discoverPlayers: "Scopri i giocatori"
+
 registerForm.firstname: Nome
 registerForm.lastname: Cognome
 registerForm.email: "Indirizzo email"

@@ -1,0 +1,13 @@
+navBar.home: Home
+navBar.players: Giocatori
+navBar.addPlayer: 'Aggiungi un giocatore'
+navBar.account: 'Il mio account'
+navBar.logout: Disconnetti
+navBar.register: Registrati
+navBar.login: Accedi
+registerForm.firstname: Nome
+registerForm.lastname: Cognome
+registerForm.email: 'Indirizzo email'
+registerForm.plainPassword: Password
+registerForm.agreeTerms: 'Accetto i termini'
+registerForm.submit: Registrati

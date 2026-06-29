@@ -1,13 +1,23 @@
 navBar.home: Accueil
 navBar.players: Joueurs
-navBar.addPlayer: 'Ajouter un joueur'
-navBar.account: 'Mon Compte'
-navBar.logout: 'Se Déconnecter'
+navBar.addPlayer: "Ajouter un joueur"
+navBar.account: "Mon Compte"
+navBar.logout: "Se Déconnecter"
 navBar.register: "S'enregistrer"
-navBar.login: 'Se Connecter'
+navBar.login: "Se Connecter"
+
 registerForm.firstname: Prénom
 registerForm.lastname: Nom
-registerForm.email: 'Adresse e-mail'
-registerForm.plainPassword: 'Mot de passe'
+registerForm.email: "Adresse e-mail"
+registerForm.plainPassword: "Mot de passe"
 registerForm.agreeTerms: "J'accepte les conditions"
 registerForm.submit: "S'enregistrer"
+
+loginForm.title: "Se Connecter"
+loginForm.email: "Email"
+loginForm.password: "Mot de passe"
+loginForm.submit: "Se Connecter"
+loginForm.createAccount: "Créer un compte"
+
+loginForm.alreadyConnected: "Vous êtes connecté en tant que"
+loginForm.logout: "Déconnexion"

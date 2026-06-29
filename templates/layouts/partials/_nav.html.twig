@@ -15,7 +15,7 @@
                     {{ app.current_route == 'app_home' 
                         ? 'text-orange-400 border-b-2 border-orange-400' 
                         : 'text-gray-300 hover:text-white' }}">
-                    Accueil
+                    {{ 'navBar.home'|trans }}
                 </a>
             </li>
             <li>
@@ -24,7 +24,7 @@
                     {{ app.current_route starts with 'app_player' 
                         ? 'text-orange-400 border-b-2 border-orange-400' 
                         : 'text-gray-300 hover:text-white' }}">
-                    Joueurs
+                    {{ 'navBar.players'|trans }}
                 </a>
             </li>
             {% if app.user %}
@@ -34,7 +34,7 @@
                         {{ app.current_route == 'app_player_create' 
                             ? 'text-orange-400 border-b-2 border-orange-400' 
                             : 'text-gray-300 hover:text-white' }}">
-                        Ajouter un joueur
+                        {{ 'navBar.addPlayer'|trans }}
                     </a>
                 </li>
             {% endif %}
@@ -47,11 +47,11 @@
                     {{ app.current_route == 'app_account' 
                         ? 'text-orange-400 border-b-2 border-orange-400' 
                         : 'text-gray-300 hover:text-white' }}">
-                    Mon Compte
+                    {{ 'navBar.account'|trans }}
                 </a>
                 <a href="{{ path('app_logout') }}" 
                     class="font-medium text-gray-300 hover:text-white transition-colors pb-1">
-                    Se Déconnecter
+                    {{ 'navBar.logout'|trans }}
                 </a>
             {% else %}
                 <a href="{{ path('app_register') }}" 
@@ -59,14 +59,14 @@
                     {{ app.current_route == 'app_register' 
                         ? 'text-orange-400 border-b-2 border-orange-400' 
                         : 'text-gray-300 hover:text-white' }}">
-                    S'enregistrer
+                    {{ 'navBar.register'|trans }}
                 </a>
                 <a href="{{ path('app_login') }}" 
                     class="font-medium transition-colors pb-1
                     {{ app.current_route == 'app_login' 
                         ? 'text-orange-400 border-b-2 border-orange-400' 
                         : 'text-gray-300 hover:text-white' }}">
-                    Se Connecter
+                    {{ 'navBar.login'|trans }}
                 </a>
             {% endif %}
         </div>
@@ -85,43 +85,43 @@
             class="block py-2 transition-colors
             {{ app.current_route == 'app_home' 
                 ? 'text-orange-400' : 'text-gray-300 hover:text-orange-400' }}">
-            Accueil
+            {{ 'navBar.home'|trans }}
         </a>
         <a href="{{ path('app_player') }}" 
             class="block py-2 transition-colors
             {{ app.current_route starts with 'app_player' 
                 ? 'text-orange-400' : 'text-gray-300 hover:text-orange-400' }}">
-            Joueurs
+            {{ 'navBar.players'|trans }}
         </a>
         {% if app.user %}
             <a href="{{ path('app_player_create') }}" 
                 class="block py-2 transition-colors
                 {{ app.current_route == 'app_player_create' 
                     ? 'text-orange-400' : 'text-gray-300 hover:text-orange-400' }}">
-                Ajouter un joueur
+                {{ 'navBar.addPlayer'|trans }}
             </a>
             <a href="{{ path('app_account') }}" 
                 class="block py-2 transition-colors
                 {{ app.current_route == 'app_account' 
                     ? 'text-orange-400' : 'text-gray-300 hover:text-orange-400' }}">
-                Mon Compte
+                {{ 'navBar.account'|trans }}
             </a>
             <a href="{{ path('app_logout') }}" 
                 class="block py-2 text-gray-300 hover:text-orange-400 transition-colors">
-                Se Déconnecter
+                {{ 'navBar.logout'|trans }}
             </a>
         {% else %}
             <a href="{{ path('app_register') }}" 
                 class="block py-2 transition-colors
                 {{ app.current_route == 'app_register' 
                     ? 'text-orange-400' : 'text-gray-300 hover:text-orange-400' }}">
-                S'enregistrer
+                {{ 'navBar.register'|trans }}
             </a>
             <a href="{{ path('app_login') }}" 
                 class="block py-2 transition-colors
                 {{ app.current_route == 'app_login' 
                     ? 'text-orange-400' : 'text-gray-300 hover:text-orange-400' }}">
-                Se Connecter
+                {{ 'navBar.login'|trans }}
             </a>
         {% endif %}
     </div>

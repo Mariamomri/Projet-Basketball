@@ -55,10 +55,18 @@ playerForm.create: "Crea il giocatore"
 playerForm.editTitle: "Modifica"
 playerForm.save: "Salva le modifiche"
 
-account.title: "Il mio account"
+account.title: "Il Mio Account"
 account.firstname: "Nome"
 account.lastname: "Cognome"
 account.email: "Email"
+account.noImage: "Nessuna immagine"
+account.editButton: "Modifica il tuo account"
+account.editTitle: "Modifica il tuo account"
+account.applyChanges: "Applica le modifiche"
+
+coachForm.firstname: "Nome"
+coachForm.lastname: "Cognome"
+coachForm.image: "Foto profilo"
 
 loginForm.forgotPassword: "Password dimenticata?"
 

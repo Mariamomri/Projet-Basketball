@@ -59,6 +59,14 @@ account.title: "Mon Compte"
 account.firstname: "Prénom"
 account.lastname: "Nom"
 account.email: "Email"
+account.noImage: "Aucune image"
+account.editButton: "Modifier mon compte"
+account.editTitle: "Modifier mon compte"
+account.applyChanges: "Appliquer les changements"
+
+coachForm.firstname: "Prénom"
+coachForm.lastname: "Nom"
+coachForm.image: "Photo de profil"
 
 loginForm.forgotPassword: "Mot de passe oublié ?"
 

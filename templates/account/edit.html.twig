@@ -26,8 +26,8 @@
 
                 {% if coach.imageName %}
                     <img src="{{ vich_uploader_asset(coach, 'imageFile')|imagine_filter('avatar_thumbnail') }}"
-                         alt="Profile"
-                         class="rounded-full w-24 h-24 object-cover mb-3 border border-orange-600/30">
+                        alt="Profile"
+                        class="rounded-full w-24 h-24 object-cover mb-3 border border-orange-600/30">
                 {% endif %}
 
                 {{ form_widget(coachForm.imageFile, {'attr': {'class': 'text-white'}}) }}

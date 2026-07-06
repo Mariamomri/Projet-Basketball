@@ -1,95 +1,80 @@
+vich_uploader.form_label.delete_confirm: 'Supprimer?'
+vich_uploader.link.download: Télécharger
 navBar.home: Accueil
 navBar.players: Joueurs
-navBar.addPlayer: "Ajouter un joueur"
-navBar.account: "Mon Compte"
-navBar.logout: "Se Déconnecter"
+navBar.addPlayer: 'Ajouter un joueur'
+navBar.account: 'Mon Compte'
+navBar.logout: 'Se Déconnecter'
 navBar.register: "S'enregistrer"
-navBar.login: "Se Connecter"
-
-home.welcome: "Bienvenue sur"
-home.description: "Le basketball oppose deux équipes de cinq joueurs. Le but : lancer le ballon dans le panier adverse pour marquer des points."
-home.discoverPlayers: "Découvrir les joueurs"
-
+navBar.login: 'Se Connecter'
+home.welcome: 'Bienvenue sur'
+home.description: 'Le basketball oppose deux équipes de cinq joueurs. Le but : lancer le ballon dans le panier adverse pour marquer des points.'
+home.discoverPlayers: 'Découvrir les joueurs'
 registerForm.firstname: Prénom
 registerForm.lastname: Nom
-registerForm.email: "Adresse e-mail"
-registerForm.plainPassword: "Mot de passe"
+registerForm.email: 'Adresse e-mail'
+registerForm.plainPassword: 'Mot de passe'
 registerForm.agreeTerms: "J'accepte les conditions"
 registerForm.submit: "S'enregistrer"
-
-loginForm.title: "Se Connecter"
-loginForm.email: "Email"
-loginForm.password: "Mot de passe"
-loginForm.submit: "Se Connecter"
-loginForm.createAccount: "Créer un compte"
-
-loginForm.alreadyConnected: "Vous êtes connecté en tant que"
-loginForm.logout: "Déconnexion"
-
-playerIndex.subtitle: "Nos stars"
-playerIndex.title1: "Les"
-playerIndex.title2: "Joueurs"
-playerIndex.description: "Découvrez les meilleurs joueurs de basketball de notre sélection"
-playerIndex.viewProfile: "Voir le profil"
-playerIndex.searchPlaceholder: "Rechercher par joueur ou coach..."
-playerIndex.searchButton: "Rechercher"
-
-playerShow.nbaPlayer: "Joueur NBA"
-playerShow.team: "Équipe"
-playerShow.position: "Position"
-playerShow.description: "Description"
-playerShow.coach: "Coach"
-playerShow.allPlayers: "Tous les joueurs"
-playerShow.edit: "Modifier"
-playerShow.delete: "Supprimer"
-playerShow.confirmDelete: "Êtes-vous sûr de vouloir supprimer ce joueur ?"
-
-playerForm.management: "Gestion"
-playerForm.addTitle1: "Ajouter un"
-playerForm.addTitle2: "Joueur"
-playerForm.name: "Nom du joueur"
-playerForm.position: "Poste"
-playerForm.team: "Équipe"
-playerForm.description: "Description"
+loginForm.title: 'Se Connecter'
+loginForm.email: Email
+loginForm.password: 'Mot de passe'
+loginForm.submit: 'Se Connecter'
+loginForm.createAccount: 'Créer un compte'
+loginForm.alreadyConnected: 'Vous êtes connecté en tant que'
+loginForm.logout: Déconnexion
+playerIndex.subtitle: 'Nos stars'
+playerIndex.title1: Les
+playerIndex.title2: Joueurs
+playerIndex.description: 'Découvrez les meilleurs joueurs de basketball de notre sélection'
+playerIndex.viewProfile: 'Voir le profil'
+playerIndex.searchPlaceholder: 'Rechercher par joueur ou coach...'
+playerIndex.searchButton: Rechercher
+playerShow.nbaPlayer: 'Joueur NBA'
+playerShow.team: Équipe
+playerShow.position: Position
+playerShow.description: Description
+playerShow.coach: Coach
+playerShow.allPlayers: 'Tous les joueurs'
+playerShow.edit: Modifier
+playerShow.delete: Supprimer
+playerShow.confirmDelete: 'Êtes-vous sûr de vouloir supprimer ce joueur ?'
+playerForm.management: Gestion
+playerForm.addTitle1: 'Ajouter un'
+playerForm.addTitle2: Joueur
+playerForm.name: 'Nom du joueur'
+playerForm.position: Poste
+playerForm.team: Équipe
+playerForm.description: Description
 playerForm.image: "URL de l'image (optionnel)"
-playerForm.create: "Créer le joueur"
-
-playerForm.editTitle: "Modifier"
-playerForm.save: "Enregistrer les modifications"
-
-account.title: "Mon Compte"
-account.firstname: "Prénom"
-account.lastname: "Nom"
-account.email: "Email"
-account.editButton: "Modifier mon compte"
-account.editTitle: "Modifier mon compte"
-account.applyChanges: "Appliquer les changements"
-
-coachForm.firstname: "Prénom"
-coachForm.lastname: "Nom"
-coachForm.image: "Photo de profil"
-
-loginForm.forgotPassword: "Mot de passe oublié ?"
-
-resetPassword.requestTitle: "Réinitialiser votre mot de passe"
-resetPassword.requestInfo: "Entrez votre adresse e-mail, nous vous enverrons un lien pour réinitialiser votre mot de passe."
-resetPassword.requestSubmit: "Envoyer le lien de réinitialisation"
-
-resetPassword.checkEmailText: "Si un compte correspondant à votre email existe, un message contenant un lien pour réinitialiser votre mot de passe vient de vous être envoyé. Ce lien expirera dans"
+playerForm.create: 'Créer le joueur'
+playerForm.editTitle: Modifier
+playerForm.save: 'Enregistrer les modifications'
+account.title: 'Mon Compte'
+account.firstname: Prénom
+account.lastname: Nom
+account.email: Email
+account.editButton: 'Modifier mon compte'
+account.editTitle: 'Modifier mon compte'
+account.applyChanges: 'Appliquer les changements'
+coachForm.firstname: Prénom
+coachForm.lastname: Nom
+coachForm.image: 'Photo de profil'
+loginForm.forgotPassword: 'Mot de passe oublié ?'
+resetPassword.requestTitle: 'Réinitialiser votre mot de passe'
+resetPassword.requestInfo: 'Entrez votre adresse e-mail, nous vous enverrons un lien pour réinitialiser votre mot de passe.'
+resetPassword.requestSubmit: 'Envoyer le lien de réinitialisation'
+resetPassword.checkEmailText: 'Si un compte correspondant à votre email existe, un message contenant un lien pour réinitialiser votre mot de passe vient de vous être envoyé. Ce lien expirera dans'
 resetPassword.checkEmailSpam: "Si vous ne recevez pas d'email, vérifiez votre dossier spam ou"
-resetPassword.checkEmailRetry: "réessayez"
-
-resetPassword.resetTitle: "Réinitialiser votre mot de passe"
-resetPassword.resetSubmit: "Réinitialiser le mot de passe"
-
-resetPassword.newPassword: "Nouveau mot de passe"
-resetPassword.repeatPassword: "Répéter le mot de passe"
-
-resetPassword.emailHi: "Bonjour !"
-resetPassword.emailIntro: "Pour réinitialiser votre mot de passe, veuillez visiter le lien suivant"
-resetPassword.emailExpiry: "Ce lien expirera dans"
-resetPassword.emailCheers: "Cordialement !"
-
-registration.emailVerified: "Votre adresse e-mail a été vérifiée."
-
-registerForm.title: "Inscription"
+resetPassword.checkEmailRetry: réessayez
+resetPassword.resetTitle: 'Réinitialiser votre mot de passe'
+resetPassword.resetSubmit: 'Réinitialiser le mot de passe'
+resetPassword.newPassword: 'Nouveau mot de passe'
+resetPassword.repeatPassword: 'Répéter le mot de passe'
+resetPassword.emailHi: 'Bonjour !'
+resetPassword.emailIntro: 'Pour réinitialiser votre mot de passe, veuillez visiter le lien suivant'
+resetPassword.emailExpiry: 'Ce lien expirera dans'
+resetPassword.emailCheers: 'Cordialement !'
+registration.emailVerified: 'Votre adresse e-mail a été vérifiée.'
+registerForm.title: Inscription
+'Account successfuly updated !': '__Account successfuly updated !'

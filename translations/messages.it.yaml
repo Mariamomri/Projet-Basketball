@@ -1,95 +1,80 @@
+vich_uploader.form_label.delete_confirm: 'Rimuovere?'
+vich_uploader.link.download: Scaricare
 navBar.home: Home
 navBar.players: Giocatori
-navBar.addPlayer: "Aggiungi un giocatore"
-navBar.account: "Il mio account"
+navBar.addPlayer: 'Aggiungi un giocatore'
+navBar.account: 'Il mio account'
 navBar.logout: Disconnetti
 navBar.register: Registrati
 navBar.login: Accedi
-
-home.welcome: "Benvenuti su"
+home.welcome: 'Benvenuti su'
 home.description: "Il basket vede due squadre di cinque giocatori. L'obiettivo: lanciare la palla nel canestro avversario per segnare punti."
-home.discoverPlayers: "Scopri i giocatori"
-
+home.discoverPlayers: 'Scopri i giocatori'
 registerForm.firstname: Nome
 registerForm.lastname: Cognome
-registerForm.email: "Indirizzo email"
+registerForm.email: 'Indirizzo email'
 registerForm.plainPassword: Password
-registerForm.agreeTerms: "Accetto i termini"
+registerForm.agreeTerms: 'Accetto i termini'
 registerForm.submit: Registrati
-
-loginForm.title: "Accedi"
-loginForm.email: "Email"
-loginForm.password: "Password"
-loginForm.submit: "Accedi"
-loginForm.createAccount: "Crea un account"
-
-loginForm.alreadyConnected: "Vous êtes connecté en tant que"
-loginForm.logout: "Déconnexion"
-
-playerIndex.subtitle: "Le nostre stelle"
-playerIndex.title1: "I"
-playerIndex.title2: "Giocatori"
-playerIndex.description: "Scopri i migliori giocatori di basket della nostra selezione"
-playerIndex.viewProfile: "Vedi il profilo"
-playerIndex.searchPlaceholder: "Cerca per giocatore o coach..."
-playerIndex.searchButton: "Cerca"
-
-playerShow.nbaPlayer: "Giocatore NBA"
-playerShow.team: "Squadra"
-playerShow.position: "Posizione"
-playerShow.description: "Descrizione"
-playerShow.coach: "Coach"
-playerShow.allPlayers: "Tutti i giocatori"
-playerShow.edit: "Modifica"
-playerShow.delete: "Elimina"
-playerShow.confirmDelete: "Sei sicuro di voler eliminare questo giocatore?"
-
-playerForm.management: "Gestione"
-playerForm.addTitle1: "Aggiungi un"
-playerForm.addTitle2: "Giocatore"
-playerForm.name: "Nome del giocatore"
-playerForm.position: "Ruolo"
-playerForm.team: "Squadra"
-playerForm.description: "Descrizione"
+loginForm.title: Accedi
+loginForm.email: Email
+loginForm.password: Password
+loginForm.submit: Accedi
+loginForm.createAccount: 'Crea un account'
+loginForm.alreadyConnected: 'Vous êtes connecté en tant que'
+loginForm.logout: Déconnexion
+playerIndex.subtitle: 'Le nostre stelle'
+playerIndex.title1: I
+playerIndex.title2: Giocatori
+playerIndex.description: 'Scopri i migliori giocatori di basket della nostra selezione'
+playerIndex.viewProfile: 'Vedi il profilo'
+playerIndex.searchPlaceholder: 'Cerca per giocatore o coach...'
+playerIndex.searchButton: Cerca
+playerShow.nbaPlayer: 'Giocatore NBA'
+playerShow.team: Squadra
+playerShow.position: Posizione
+playerShow.description: Descrizione
+playerShow.coach: Coach
+playerShow.allPlayers: 'Tutti i giocatori'
+playerShow.edit: Modifica
+playerShow.delete: Elimina
+playerShow.confirmDelete: 'Sei sicuro di voler eliminare questo giocatore?'
+playerForm.management: Gestione
+playerForm.addTitle1: 'Aggiungi un'
+playerForm.addTitle2: Giocatore
+playerForm.name: 'Nome del giocatore'
+playerForm.position: Ruolo
+playerForm.team: Squadra
+playerForm.description: Descrizione
 playerForm.image: "URL dell'immagine (opzionale)"
-playerForm.create: "Crea il giocatore"
-
-playerForm.editTitle: "Modifica"
-playerForm.save: "Salva le modifiche"
-
-account.title: "Il Mio Account"
-account.firstname: "Nome"
-account.lastname: "Cognome"
-account.email: "Email"
-account.editButton: "Modifica il tuo account"
-account.editTitle: "Modifica il tuo account"
-account.applyChanges: "Applica le modifiche"
-
-coachForm.firstname: "Nome"
-coachForm.lastname: "Cognome"
-coachForm.image: "Foto profilo"
-
-loginForm.forgotPassword: "Password dimenticata?"
-
-resetPassword.requestTitle: "Reimposta la tua password"
-resetPassword.requestInfo: "Inserisci il tuo indirizzo email, ti invieremo un link per reimpostare la password."
-resetPassword.requestSubmit: "Invia il link di reset"
-
-resetPassword.checkEmailText: "Se esiste un account associato alla tua email, ti è appena stato inviato un messaggio con un link per reimpostare la password. Questo link scadrà in"
+playerForm.create: 'Crea il giocatore'
+playerForm.editTitle: Modifica
+playerForm.save: 'Salva le modifiche'
+account.title: 'Il Mio Account'
+account.firstname: Nome
+account.lastname: Cognome
+account.email: Email
+account.editButton: 'Modifica il tuo account'
+account.editTitle: 'Modifica il tuo account'
+account.applyChanges: 'Applica le modifiche'
+coachForm.firstname: Nome
+coachForm.lastname: Cognome
+coachForm.image: 'Foto profilo'
+loginForm.forgotPassword: 'Password dimenticata?'
+resetPassword.requestTitle: 'Reimposta la tua password'
+resetPassword.requestInfo: 'Inserisci il tuo indirizzo email, ti invieremo un link per reimpostare la password.'
+resetPassword.requestSubmit: 'Invia il link di reset'
+resetPassword.checkEmailText: 'Se esiste un account associato alla tua email, ti è appena stato inviato un messaggio con un link per reimpostare la password. Questo link scadrà in'
 resetPassword.checkEmailSpam: "Se non ricevi un'email, controlla la cartella spam oppure"
-resetPassword.checkEmailRetry: "riprova"
-
-resetPassword.resetTitle: "Reimposta la tua password"
-resetPassword.resetSubmit: "Reimposta la password"
-
-resetPassword.newPassword: "Nuova password"
-resetPassword.repeatPassword: "Ripeti la password"
-
-resetPassword.emailHi: "Ciao!"
-resetPassword.emailIntro: "Per reimpostare la tua password, visita il seguente link"
-resetPassword.emailExpiry: "Questo link scadrà in"
-resetPassword.emailCheers: "Saluti!"
-
-registration.emailVerified: "Il tuo indirizzo email è stato verificato."
-
-registerForm.title: "Registrazione"
+resetPassword.checkEmailRetry: riprova
+resetPassword.resetTitle: 'Reimposta la tua password'
+resetPassword.resetSubmit: 'Reimposta la password'
+resetPassword.newPassword: 'Nuova password'
+resetPassword.repeatPassword: 'Ripeti la password'
+resetPassword.emailHi: Ciao!
+resetPassword.emailIntro: 'Per reimpostare la tua password, visita il seguente link'
+resetPassword.emailExpiry: 'Questo link scadrà in'
+resetPassword.emailCheers: Saluti!
+registration.emailVerified: 'Il tuo indirizzo email è stato verificato.'
+registerForm.title: Registrazione
+'Account successfuly updated !': '__Account successfuly updated !'

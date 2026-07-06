@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 29, 2026 at 07:56 PM
+-- Generation Time: Jun 29, 2026 at 11:13 PM
 -- Server version: 9.1.0
 -- PHP Version: 8.3.14
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `coaches` (
   `is_verified` tinyint NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_IDENTIFIER_EMAIL` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ;
 
 --
 -- Dumping data for table `coaches`
@@ -48,11 +48,12 @@ CREATE TABLE IF NOT EXISTS `coaches` (
 
 INSERT INTO `coaches` (`id`, `email`, `roles`, `password`, `firstname`, `lastname`, `created_at`, `updated_at`, `is_verified`) VALUES
 (1, 'Julien@basketball.be', '[]', '$2y$13$z8RJQbZeEiOmk1MVt6V9seybLbSD9OJKWpKijfu9zzbTNPl2K9ycK', 'Julien', 'Dunia', '2026-06-27 19:26:35', '2026-06-27 19:26:35', 1),
-(2, 'sami@basketball.be', '[]', '$2y$13$gI4pPVprVcLQ1cXRU3SDFeuFXVOBH8lV0PUKEbwshndIrEsPmB3ue', 'Sami', 'Omri', '2026-06-27 19:50:49', '2026-06-27 19:50:49', 1),
+(2, 'sami@basketball.be', '[]', '$2y$13$b6IprlxhyhZDZAs4lx7jVu.M3KoUK3RLLt4B5h2xSw2M3K0Bni/56', 'Sami', 'Omri', '2026-06-27 19:50:49', '2026-06-29 23:01:19', 1),
 (3, 'codegirlbxl@gmail.com', '[]', '$2y$13$siCKWVRuwZg67tsOOvcSHOiwComdOjMk9LfUOBZuR7CBgYSIo2seS', 'Mary', 'Omri', '2026-06-28 17:15:38', '2026-06-28 17:15:38', 0),
 (4, 'bianchl@gmail.com', '[]', '$2y$13$5mVvsJxZEoFOBBIHcVFQTuEBvLnc1kixRRBmbOJv2d2eylzq5C9ri', 'Sara', 'Bianchi', '2026-06-28 17:26:38', '2026-06-28 17:30:49', 1),
 (5, 'imran@gmail.com', '[]', '$2y$13$qU5hH4APC05jSbaGgbbZPu3H2GqqZgeBi5Vnenuo1j0SiDfIVr4iC', 'Imran', 'Blu', '2026-06-28 17:45:39', '2026-06-28 17:47:11', 1),
-(6, 'ciao@gmail.com', '[]', '$2y$13$6/XOc1n3numM69GLUSDgU.ABhS5G3AHMgv3sw2DHFxP41zY1omd2q', 'Rayan', 'Omri', '2026-06-29 17:33:38', '2026-06-29 17:33:38', 0);
+(6, 'ciao@gmail.com', '[]', '$2y$13$6/XOc1n3numM69GLUSDgU.ABhS5G3AHMgv3sw2DHFxP41zY1omd2q', 'Rayan', 'Omri', '2026-06-29 17:33:38', '2026-06-29 17:33:38', 0),
+(7, 'pippo@gmail.com', '[]', '$2y$13$rzQal3yxwYt5n4ArqP2AUuqKw54XJnTk.eb5RKKiikz0d/fhwntsK', 'pippo', 'pippo', '2026-06-29 22:31:14', '2026-06-29 22:39:07', 1);
 
 -- --------------------------------------------------------
 
@@ -66,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `doctrine_migration_versions` (
   `executed_at` datetime DEFAULT NULL,
   `execution_time` int DEFAULT NULL,
   PRIMARY KEY (`version`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
 
 --
 -- Dumping data for table `doctrine_migration_versions`
@@ -81,26 +82,8 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20260517154723', NULL, NULL),
 ('DoctrineMigrations\\Version20260627163958', '2026-06-27 16:48:30', 129),
 ('DoctrineMigrations\\Version20260627222246', '2026-06-27 22:24:04', 73),
-('DoctrineMigrations\\Version20260628001631', '2026-06-28 00:20:39', 188);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `messenger_messages`
---
-
-DROP TABLE IF EXISTS `messenger_messages`;
-CREATE TABLE IF NOT EXISTS `messenger_messages` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `body` longtext NOT NULL,
-  `headers` longtext NOT NULL,
-  `queue_name` varchar(190) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `available_at` datetime NOT NULL,
-  `delivered_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `IDX_75EA56E0FB7336F0E3BD61CE16BA31DBBF396750` (`queue_name`,`available_at`,`delivered_at`,`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+('DoctrineMigrations\\Version20260628001631', '2026-06-28 00:20:39', 188),
+('DoctrineMigrations\\Version20260629212748', '2026-06-29 21:29:07', 535);
 
 -- --------------------------------------------------------
 
@@ -122,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `coach_id` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_264E43A63C105691` (`coach_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
 
 --
 -- Dumping data for table `players`
@@ -134,6 +117,31 @@ INSERT INTO `players` (`id`, `name`, `slug`, `position`, `team`, `description`, 
 (3, 'Giannis Antetokounmpo', 'giannis-antetokounmpo', 'Power Forward', 'Milwaukee Bucks', 'Surnommé le Greek Freak, double MVP de la saison régulière et champion NBA en 2021.', 'https://tse4.mm.bing.net/th/id/OIP.vBDfolMSjz21ia-3M-6svwHaEE?pid=Api&h=220&P=0', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1),
 (5, 'test 1', 'test-1', 'test@gmail.com', 'a', 'gcjvn;hv', NULL, '2026-06-28 21:33:42', '2026-06-28 21:33:42', 5),
 (6, 'bla bla', 'bla-bla', 'nhjknh', 'jnkj', ',:,jlmkjpm', NULL, '2026-06-29 17:43:39', '2026-06-29 17:43:39', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reset_password_request`
+--
+
+DROP TABLE IF EXISTS `reset_password_request`;
+CREATE TABLE IF NOT EXISTS `reset_password_request` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `selector` varchar(20) NOT NULL,
+  `hashed_token` varchar(100) NOT NULL,
+  `requested_at` datetime NOT NULL,
+  `expires_at` datetime NOT NULL,
+  `user_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `IDX_7CE748AA76ED395` (`user_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `reset_password_request`
+--
+
+INSERT INTO `reset_password_request` (`id`, `selector`, `hashed_token`, `requested_at`, `expires_at`, `user_id`) VALUES
+(1, 'i0bQ5rYkJcgpMeVxD39I', '4EsT/hc3bRygWMlA0ZuYQKZVcwcJ97GI2OjjVQDkELY=', '2026-06-29 22:11:31', '2026-06-29 23:11:31', 3);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

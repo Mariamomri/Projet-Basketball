@@ -11,12 +11,12 @@
         <div class="flex justify-center mb-4">
             {% if app.user.imageName %}
                 <img src="{{ vich_uploader_asset(app.user, 'imageFile')|imagine_filter('avatar_thumbnail') }}"
-                    alt="Profile"
-                    class="rounded-full w-32 h-32 object-cover border border-orange-600/30">
+                alt="Profile"
+                class="rounded-full w-32 h-32 object-cover border border-orange-600/30">
             {% else %}
-                <div class="rounded-full w-32 h-32 bg-gray-800 border border-orange-600/30 flex items-center justify-center text-gray-500 text-sm">
-                    {{ 'account.noImage'|trans }}
-                </div>
+                <img src="{{ asset('images/coaches/login.png') }}"
+                    alt="Profile par défaut"
+                    class="rounded-full w-32 h-32 object-cover border border-orange-600/30">
             {% endif %}
         </div>
 

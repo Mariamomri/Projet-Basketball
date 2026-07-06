@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier mon compte{% endblock %}
+
+{% block body %}
+<div class="max-w-2xl mx-auto px-4 py-12">
+    <h1 class="font-bebas text-4xl tracking-widest text-orange-500 mb-8">{{ 'account.editTitle'|trans|upper }}</h1>
+
+    <div class="bg-gray-900 border border-orange-600/20 rounded-lg p-6">
+        {{ form_start(coachForm) }}
+
+            <div class="mb-4">
+                {{ form_label(coachForm.firstname, null, {'label_attr': {'class': 'text-gray-400 text-sm block mb-1'}}) }}
+                {{ form_widget(coachForm.firstname, {'attr': {'class': 'w-full bg-gray-800 text-white border border-orange-600/30 rounded px-3 py-2'}}) }}
+                {{ form_errors(coachForm.firstname) }}
+            </div>
+
+            <div class="mb-4">
+                {{ form_label(coachForm.lastname, null, {'label_attr': {'class': 'text-gray-400 text-sm block mb-1'}}) }}
+                {{ form_widget(coachForm.lastname, {'attr': {'class': 'w-full bg-gray-800 text-white border border-orange-600/30 rounded px-3 py-2'}}) }}
+                {{ form_errors(coachForm.lastname) }}
+            </div>
+
+            <div class="mb-6">
+                {{ form_label(coachForm.imageFile, null, {'label_attr': {'class': 'text-gray-400 text-sm block mb-1'}}) }}
+
+                {% if coach.imageName %}
+                    <img src="{{ vich_uploader_asset(coach, 'imageFile')|imagine_filter('avatar_thumbnail') }}"
+                         alt="Profile"
+                         class="rounded-full w-24 h-24 object-cover mb-3 border border-orange-600/30">
+                {% endif %}
+
+                {{ form_widget(coachForm.imageFile, {'attr': {'class': 'text-white'}}) }}
+                {{ form_errors(coachForm.imageFile) }}
+            </div>
+
+            <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-bebas tracking-widest px-6 py-3 rounded uppercase">
+                {{ 'account.applyChanges'|trans }}
+            </button>
+
+        {{ form_end(coachForm) }}
+    </div>
+</div>
+{% endblock %}

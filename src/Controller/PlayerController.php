@@ -13,6 +13,7 @@ use App\Entity\Player;
 use App\Form\PlayerType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Knp\Component\Pager\PaginatorInterface;
 
 // use Symfony\Component\HttpFoundation\Request; l'ho utilizzata per il debug ma non fonziona
 
@@ -28,13 +29,15 @@ final class PlayerController extends AbstractController
 
 
     #[Route('/players', name: 'app_player')]
-    public function index(PlayerRepository $repository): Response
+    public function index(PlayerRepository $repository, PaginatorInterface $paginator, Request $request): Response
     {
-        $players = $repository->findAll();
-        // dd($players);
+        $query = $repository->createQueryBuilder('p')->getQuery();
 
-        // dump($request);  non mi trova la variabile request
-        // die;
+        $players = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1),
+            6 // numero di player per pagina
+        );
 
         return $this->render('player/index.html.twig', [
             'players' => $players,

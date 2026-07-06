@@ -37,8 +37,12 @@
                 <div class="gradient-orange h-2"></div>
 
                 <div class="p-6">
-                    {% if player.image %}
-                    <img src="{{ player.image }}" 
+                    {% if player.imageName %}
+                    <img src="{{ vich_uploader_asset(player, 'imageFile')|imagine_filter('avatar_thumbnail') }}"
+                        alt="{{ player.name }}"
+                        class="w-16 h-16 rounded-2xl object-cover mb-4 shadow-lg glow">
+                    {% elseif player.image %}
+                    <img src="{{ player.image }}"
                         alt="{{ player.name }}"
                         class="w-16 h-16 rounded-2xl object-cover mb-4 shadow-lg glow">
                     {% else %}

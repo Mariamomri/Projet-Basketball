@@ -150,6 +150,7 @@ class Coach implements UserInterface, PasswordAuthenticatedUserInterface
     public function __serialize(): array
     {
         $data = (array) $this;
+        unset($data["\0" . self::class . "\0imageFile"]);
         $data["\0" . self::class . "\0password"] = hash('crc32c', $this->password);
 
         return $data;

@@ -36,7 +36,7 @@ final class PlayerController extends AbstractController
         $players = $paginator->paginate(
             $query,
             $request->query->getInt('page', 1),
-            6 // numero di player per pagina
+            3 // numero di player per pagina
         );
 
         return $this->render('player/index.html.twig', [

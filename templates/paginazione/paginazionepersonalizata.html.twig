@@ -1,0 +1,46 @@
+{% if pageCount > 1 %}
+<nav class="flex items-center justify-center gap-2 font-bebas tracking-wider">
+
+    {% if last <= 1 %}
+        {# niente da mostrare se c'è solo una pagina #}
+    {% else %}
+
+        {% if previous is defined %}
+            <a href="{{ path(route, query|merge({(pageParameterName): previous})) }}"
+            class="px-4 py-2 bg-gray-900 border border-orange-600/30 text-gray-300 rounded hover:bg-orange-600 hover:text-white transition">
+                <
+            </a>
+        {% else %}
+            <span class="px-4 py-2 bg-gray-900 border border-gray-800 text-gray-600 rounded cursor-not-allowed">
+                <
+            </span>
+        {% endif %}
+
+        {% for page in pagesInRange %}
+            {% if page != current %}
+                <a href="{{ path(route, query|merge({(pageParameterName): page})) }}"
+                class="px-4 py-2 bg-gray-900 border border-orange-600/30 text-gray-300 rounded hover:bg-orange-600 hover:text-white transition">
+                    {{ page }}
+                </a>
+            {% else %}
+                <span class="px-4 py-2 bg-orange-500 border border-orange-500 text-white rounded font-semibold">
+                    {{ page }}
+                </span>
+            {% endif %}
+        {% endfor %}
+
+        {% if next is defined %}
+            <a href="{{ path(route, query|merge({(pageParameterName): next})) }}"
+              class="px-4 py-2 bg-gray-900 border border-orange-600/30 text-gray-300 rounded hover:bg-orange-600 hover:text-white transition">
+                >
+            </a>
+        {% else %}
+            <span class="px-4 py-2 bg-gray-900 border border-gray-800 text-gray-600 rounded cursor-not-allowed">
+                >
+            </span>
+        {% endif %}
+
+    {% endif %}
+
+</nav>
+{% endif %}

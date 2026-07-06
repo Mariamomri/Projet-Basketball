@@ -30,6 +30,19 @@
 
 
     <section class="max-w-7xl mx-auto px-4 pb-20 mt-10 ">
+
+        <form method="get" action="{{ path('app_player') }}" class="max-w-xl mx-auto mb-10">
+            <div class="flex gap-2">
+                <input type="text" name="q" value="{{ searchTerm }}"
+                    placeholder="{{ 'playerIndex.searchPlaceholder'|trans }}"
+                    class="w-full bg-gray-900 text-white border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-orange-500">
+                <button type="submit"
+                    class="gradient-orange text-white px-6 py-3 rounded-xl font-semibold hover:opacity-90 transition-all whitespace-nowrap">
+                    {{ 'playerIndex.searchButton'|trans }}
+                </button>
+            </div>
+        </form>
+        
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
             {% for player in players %}
             <div class="card-hover bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden group">

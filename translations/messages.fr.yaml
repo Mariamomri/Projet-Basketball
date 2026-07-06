@@ -31,6 +31,8 @@ playerIndex.title1: "Les"
 playerIndex.title2: "Joueurs"
 playerIndex.description: "Découvrez les meilleurs joueurs de basketball de notre sélection"
 playerIndex.viewProfile: "Voir le profil"
+playerIndex.searchPlaceholder: "Rechercher par joueur ou coach..."
+playerIndex.searchButton: "Rechercher"
 
 playerShow.nbaPlayer: "Joueur NBA"
 playerShow.team: "Équipe"

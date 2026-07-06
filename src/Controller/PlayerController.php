@@ -31,16 +31,19 @@ final class PlayerController extends AbstractController
     #[Route('/players', name: 'app_player')]
     public function index(PlayerRepository $repository, PaginatorInterface $paginator, Request $request): Response
     {
-        $query = $repository->createQueryBuilder('p')->getQuery();
+        $searchTerm = $request->query->get('q');
+
+        $query = $repository->search($searchTerm)->getQuery();
 
         $players = $paginator->paginate(
             $query,
             $request->query->getInt('page', 1),
-            3 // numero di player per pagina
+            3
         );
 
         return $this->render('player/index.html.twig', [
             'players' => $players,
+            'searchTerm' => $searchTerm,
         ]);
     }
 

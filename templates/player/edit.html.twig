@@ -43,11 +43,18 @@
                     attr: { class: 'w-full bg-gray-800 text-white border border-gray-700 rounded px-3 py-2', rows: 4 },
                     label_attr: { class: 'text-gray-300 text-sm block mb-1' }
                 }) }}
-                {{ form_row(monForm.image, {
-                    label: 'playerForm.image'|trans,
-                    attr: { class: 'w-full bg-gray-800 text-white border border-gray-700 rounded px-3 py-2' },
-                    label_attr: { class: 'text-gray-300 text-sm block mb-1' }
-                }) }}
+                <div>
+                    <label class="text-gray-300 text-sm block mb-1">{{ 'playerForm.image'|trans }}</label>
+
+                    {% if player.imageName %}
+                        <img src="{{ vich_uploader_asset(player, 'imageFile')|imagine_filter('avatar_thumbnail') }}"
+                            alt="{{ player.name }}"
+                            class="w-24 h-24 rounded-xl object-cover mb-3 border border-gray-700">
+                    {% endif %}
+
+                    {{ form_widget(monForm.imageFile, { attr: { class: 'text-white' } }) }}
+                    {{ form_errors(monForm.imageFile) }}
+                </div>
                 {{ form_widget(monForm.slug) }}
 
                 <button type="submit" class="w-full inline-flex items-center justify-center gap-2 gradient-orange text-white py-3 px-4 rounded-xl font-semibold text-sm hover:opacity-90 transition-all">

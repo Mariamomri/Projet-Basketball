@@ -12,6 +12,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\String\Slugger\AsciiSlugger;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class PlayerType extends AbstractType
 {
@@ -23,8 +24,15 @@ class PlayerType extends AbstractType
             ->add('position', TextType::class)
             ->add('team', TextType::class)
             ->add('description', TextareaType::class)
-            ->add('image', TextType::class, [
+            ->add('imageFile', VichImageType::class, [
                 'required' => false,
+                'allow_delete' => true,
+                'delete_label' => 'Delete player image',
+                'download_uri' => true,
+                'image_uri' => true,
+                'asset_helper' => true,
+                'imagine_pattern' => 'avatar_thumbnail',
+                'label' => 'playerForm.image',
             ])
             ->addEventListener(FormEvents::PRE_SUBMIT, $this->autoSlug(...))
         ;

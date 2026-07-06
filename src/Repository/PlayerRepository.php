@@ -16,6 +16,19 @@ class PlayerRepository extends ServiceEntityRepository
         parent::__construct($registry, Player::class);
     }
 
+    public function search(?string $query): \Doctrine\ORM\QueryBuilder
+    {
+        $qb = $this->createQueryBuilder('p')
+            ->leftJoin('p.coach', 'c');
+
+        if ($query) {
+            $qb->andWhere('p.name LIKE :query OR c.firstname LIKE :query OR c.lastname LIKE :query')
+                ->setParameter('query', '%' . $query . '%');
+        }
+
+        return $qb;
+    }
+
     //    /**
     //     * @return Player[] Returns an array of Player objects
     //     */

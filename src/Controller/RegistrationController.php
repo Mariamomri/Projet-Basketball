@@ -18,7 +18,7 @@ use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 
 class RegistrationController extends AbstractController
 {
-    public function __construct(private EmailVerifier $emailVerifier) {}
+    public function __construct(private EmailVerifier $emailVerifier,  private TranslatorInterface $translator) {}
 
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
@@ -49,6 +49,8 @@ class RegistrationController extends AbstractController
             );
 
             // do anything else you need here, like send an email
+
+            $this->addFlash('info', $this->translator->trans('registration.checkEmail'));
 
             return $this->redirectToRoute('app_login');
         }

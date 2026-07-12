@@ -14,6 +14,8 @@ use App\Form\PlayerType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Knp\Component\Pager\PaginatorInterface;
+use App\Entity\Comment;
+use App\Form\CommentType;
 
 // use Symfony\Component\HttpFoundation\Request; l'ho utilizzata per il debug ma non fonziona
 
@@ -48,14 +50,32 @@ final class PlayerController extends AbstractController
     }
 
     #[Route('/players/{slug}-{id}', name: 'app_player_show', requirements: ['id' => '\d+', 'slug' => '[a-z0-9-]+'])]
-    public function show(string $slug, int $id, PlayerRepository $repository): Response
+    public function show(string $slug, int $id, PlayerRepository $repository, Request $request, EntityManagerInterface $em): Response
     {
         $player = $repository->find($id);
+
+        $comment = new Comment();
+        $comment->setPlayer($player);
+        if ($this->getUser()) {
+            $comment->setAuthor($this->getUser());
+        }
+
+        $form = $this->createForm(CommentType::class, $comment);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em->persist($comment);
+            $em->flush();
+
+            $this->addFlash('success', 'Votre commentaire a bien été enregistré. Il sera soumis à modération dans les plus brefs délais.');
+
+            return $this->redirectToRoute('app_player_show', ['slug' => $slug, 'id' => $id]);
+        }
 
         return $this->render('player/show.html.twig', [
             'slug'   => $slug,
             'id'     => $id,
             'player' => $player,
+            'form'   => $form->createView(),
         ]);
     }
 

@@ -63,6 +63,25 @@ final class PlayerController extends AbstractController
         $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            if (!$this->getUser()) {
+                $this->addFlash('error', 'You must login to comment !');
+                return $this->redirectToRoute('app_login');
+            }
+            if (!$this->getUser()->isVerified()) {
+                $this->addFlash('error', 'You must confirm your email to comment !');
+                return $this->redirectToRoute('app_player_show', ['slug' => $slug, 'id' => $id]);
+            }
+
+            $comment->setIsApproved(true);
+            $em->persist($comment);
+            $em->flush();
+
+            $this->addFlash('success', 'Votre commentaire a bien été enregistré.');
+
+            return $this->redirectToRoute('app_player_show', ['slug' => $slug, 'id' => $id]);
+        }
+
+            $comment->setIsApproved(true);
             $em->persist($comment);
             $em->flush();
 

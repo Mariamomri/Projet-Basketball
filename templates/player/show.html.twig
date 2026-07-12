@@ -87,7 +87,7 @@
     <section class="max-w-4xl mx-auto px-4 py-16">
         <h2 class="font-bebas text-3xl text-orange-500 mb-8">{{ 'playerShow.comments'|trans }}</h2>
 
-        {% if app.user %}
+        {% if app.user and app.user.isVerified %}
             <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-8">
                 {{ form_start(form) }}
                     {{ form_label(form.content, 'playerShow.newComment'|trans, {'label_attr': {'class': 'text-gray-300 text-sm block mb-2'}}) }}

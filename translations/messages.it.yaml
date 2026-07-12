@@ -39,6 +39,9 @@ playerShow.allPlayers: "Tutti i giocatori"
 playerShow.edit: Modifica
 playerShow.delete: Elimina
 playerShow.confirmDelete: "Sei sicuro di voler eliminare questo giocatore?"
+playerShow.comments: "Commenti"
+playerShow.newComment: "Nuovo commento"
+playerShow.postComment: "Pubblica commento"
 playerForm.management: Gestione
 playerForm.addTitle1: "Aggiungi un"
 playerForm.addTitle2: Giocatore

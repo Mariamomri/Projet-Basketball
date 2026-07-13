@@ -49,7 +49,12 @@
                 
                 <div class="gradient-orange h-2"></div>
 
-                <div class="p-6">
+                <div class="p-6 relative">
+
+                    <div class="absolute top-4 right-4 scale-75 origin-top-right">
+                        {% include 'components/_like.html.twig' %}
+                    </div>
+                    
                     {% if player.imageName %}
                     <img src="{{ vich_uploader_asset(player, 'imageFile')|imagine_filter('avatar_thumbnail') }}"
                         alt="{{ player.name }}"

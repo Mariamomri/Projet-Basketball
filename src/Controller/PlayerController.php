@@ -81,15 +81,6 @@ final class PlayerController extends AbstractController
             return $this->redirectToRoute('app_player_show', ['slug' => $slug, 'id' => $id]);
         }
 
-            $comment->setIsApproved(true);
-            $em->persist($comment);
-            $em->flush();
-
-            $this->addFlash('success', 'Votre commentaire a bien été enregistré. Il sera soumis à modération dans les plus brefs délais.');
-
-            return $this->redirectToRoute('app_player_show', ['slug' => $slug, 'id' => $id]);
-        }
-
         return $this->render('player/show.html.twig', [
             'slug'   => $slug,
             'id'     => $id,

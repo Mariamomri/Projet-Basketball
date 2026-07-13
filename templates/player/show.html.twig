@@ -36,6 +36,9 @@
                     <span class="bg-orange-500/10 text-orange-400 text-sm px-4 py-2 rounded-full border border-orange-500/20 font-medium">
                         {{ player.position }}
                     </span>
+
+                    {% include 'components/_like.html.twig' %}
+
                 </div>
 
                 <div class="md:col-span-2">
@@ -102,29 +105,29 @@
             </div>
         {% endif %}
 
-        <div class="space-y-4">
-            {% for comment in player.comments %}
-                {% if comment.isApproved %}
-                    <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 relative">
-                        <p class="text-gray-300 leading-relaxed mb-3">{{ comment.content }}</p>
-                        <p class="text-orange-400 text-sm font-semibold">{{ comment.author.firstname }} {{ comment.author.lastname }}</p>
-                        <p class="text-gray-500 text-xs">{{ comment.createdAt|date('d/m/Y H:i') }}</p>
+            <div class="space-y-4">
+                {% for comment in player.comments %}
+                    {% if comment.isApproved %}
+                        <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 relative">
+                            <p class="text-gray-300 leading-relaxed mb-3">{{ comment.content }}</p>
+                            <p class="text-orange-400 text-sm font-semibold">{{ comment.author.firstname }} {{ comment.author.lastname }}</p>
+                            <p class="text-gray-500 text-xs">{{ comment.createdAt|date('d/m/Y H:i') }}</p>
 
-                        {% if app.user and app.user.email is same as (comment.author.email) %}
-                            <form method="post" action="{{ path('comment.delete', {id: comment.id}) }}" class="absolute top-6 right-6">
-                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ comment.id) }}">
-                                <button type="submit" class="text-red-400 hover:text-red-300 text-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?')">
-                                    {{ 'playerShow.delete'|trans }}
-                                </button>
-                            </form>
-                        {% endif %}
-                    </div>
-                {% endif %}
-            {% endfor %}
+                            {% if app.user and app.user.email is same as (comment.author.email) %}
+                                <form method="post" action="{{ path('comment.delete', {id: comment.id}) }}" class="absolute top-6 right-6">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ comment.id) }}">
+                                    <button type="submit" class="text-red-400 hover:text-red-300 text-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?')">
+                                        {{ 'playerShow.delete'|trans }}
+                                    </button>
+                                </form>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<div class="py-1 gradient-orange "></div>
+    <div class="py-1 gradient-orange "></div>
 
 {% endblock %}

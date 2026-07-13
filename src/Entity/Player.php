@@ -72,9 +72,14 @@ class Player
     #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'player', orphanRemoval: true)]
     private Collection $comments;
 
+    #[ORM\ManyToMany(targetEntity: Coach::class)]
+    #[ORM\JoinTable(name: 'coach_player_like')]
+    private Collection $likes;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
+        $this->likes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -261,5 +266,36 @@ class Player
         }
 
         return $this;
+    }
+
+    public function getLikes(): Collection
+    {
+        return $this->likes;
+    }
+
+    public function addLike(Coach $like): self
+    {
+        if (!$this->likes->contains($like)) {
+            $this->likes[] = $like;
+        }
+
+        return $this;
+    }
+
+    public function removeLike(Coach $like): self
+    {
+        $this->likes->removeElement($like);
+
+        return $this;
+    }
+
+    public function isLikedByCoach(Coach $coach): bool
+    {
+        return $this->likes->contains($coach);
+    }
+
+    public function howManyLikes(): int
+    {
+        return count($this->likes);
     }
 }
